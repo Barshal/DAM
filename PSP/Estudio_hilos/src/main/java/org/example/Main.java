@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         // Estructura de datos para manejar los hilos
         ArrayList<Thread> listaPersonas = new ArrayList<Thread>();
@@ -27,6 +27,11 @@ public class Main {
 
         for (Thread thread : listaPersonas) {
             thread.start();
+        }
+
+        // Con join se fuerza a tener un punto de espera para todos los hilos hasta que terminen
+        for(Thread thread : listaPersonas){
+            thread.join();
         }
     }
 }
