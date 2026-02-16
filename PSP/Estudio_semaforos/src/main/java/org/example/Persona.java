@@ -19,18 +19,22 @@ public class Persona extends Thread{
         // Entran a la sala de espera de que tiene un limiete de 5
         try {
             salaEspera.acquire();
+            System.out.println();
             System.out.printf("%s - Entra sala de espera",id);
             Thread.sleep(tiempoEspera * 1000);
 
             // Entra en sala de donacion
                 salaDonacion.acquire();
-                System.out.printf("%s - Entra a donacion",id);
+            System.out.println();
+            System.out.printf("%s - Entra a donacion",id);
                 Thread.sleep(tiempoEspera * 1000);
                 salaDonacion.release();
                 donacion += tiempoEspera * 10;
-                System.out.printf("%s - Sale de donacion",id);
+            System.out.println();
+            System.out.printf("%s - Sale de donacion",id);
 
             salaEspera.release();
+            System.out.println();
             System.out.printf("%s - Termina el proceso",id);
 
         } catch (InterruptedException e) {

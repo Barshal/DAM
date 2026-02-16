@@ -28,5 +28,7 @@ public class Main {
             thread.join();
         }
 
+        Persona p1 = new Persona(100);
+        p1.mostradDonacion();
     }
 }
