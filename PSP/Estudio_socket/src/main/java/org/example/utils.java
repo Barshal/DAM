@@ -15,5 +15,4 @@ public class utils {
         }
         return "error"; // Valor por defecto si algo falla
     }
-
 }
