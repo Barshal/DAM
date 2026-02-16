@@ -37,7 +37,8 @@ public class socketTCPServer {
         }
 
         public static void main(String[] args){
-            String solucion = "12345";
+            //String solucion = "12345";
+            String solucion = utils.leerArchivo("src/main/resources/solucion.txt");
 
             try {
                 /* El server socket está asociado a la direccion IP del host, a la misma direccion ip
