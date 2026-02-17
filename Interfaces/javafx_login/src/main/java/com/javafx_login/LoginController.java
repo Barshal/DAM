@@ -31,7 +31,6 @@ public class LoginController {
         );
     }
 
-
     @FXML
     private ImageView ivLogo;
 
