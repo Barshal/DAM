@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx_login.LoginController">   <children>
+      <Text fx:id="txtUsuario" layoutX="204.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtContrasenia" layoutX="172.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="pfContrasenia" layoutX="309.0" layoutY="196.0" />
+      <TextField fx:id="tfUsuario" layoutX="309.0" layoutY="155.0" />
+      <ImageView fx:id="ivLogo" fitHeight="150.0" fitWidth="200.0" layoutX="226.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/logo.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="cbOpciones" layoutX="310.0" layoutY="242.0" onAction="#initialize" prefWidth="150.0" />
+      <Text fx:id="txtTipoUsuario" layoutX="167.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo usuario">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnLimpiar" layoutX="326.0" layoutY="305.0" mnemonicParsing="false" onAction="#onLimpiar" text="Limpiar" />
+      <Button fx:id="btnSalir" layoutX="199.0" layoutY="305.0" mnemonicParsing="false" onAction="#onSalir" text="Salir" textFill="#462f2f" />
+      <Button fx:id="btnEntrar" layoutX="406.0" layoutY="305.0" mnemonicParsing="false" onAction="#onEntrar" text="Entrar" />
+   </children>
+</AnchorPane>

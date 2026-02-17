@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx_profesor.ProfesorController">
+    <children>
+      <Text fx:id="txtDatosProfesor" layoutX="92.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datos profesor">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtNombre" layoutX="35.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+      <Text fx:id="txtApellidos" layoutX="33.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos" />
+      <Text fx:id="txtCodigoUem" layoutX="37.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código" />
+      <Text fx:id="txtCurso" layoutX="41.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Curso" />
+      <Text fx:id="txtLocalidad" layoutX="31.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Localidad" />
+      <Text fx:id="txtCentro" layoutX="38.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Centro" />
+      <TextField fx:id="tfNombre" editable="false" layoutX="92.0" layoutY="49.0" />
+      <TextField fx:id="tfApellido" editable="false" layoutX="92.0" layoutY="82.0" />
+      <TextField fx:id="tfCodigoUem" editable="false" layoutX="92.0" layoutY="115.0" />
+      <TextField fx:id="tfCurso" editable="false" layoutX="92.0" layoutY="150.0" />
+      <TextField fx:id="tfLocalidad" editable="false" layoutX="92.0" layoutY="188.0" />
+      <TextField fx:id="tfCentro" editable="false" layoutX="92.0" layoutY="222.0" />
+
+      <TableView fx:id="tablaAsignaturas" editable="true" layoutX="261.0" layoutY="50.0" prefHeight="338.0" prefWidth="319.0">
+          <columns>
+              <TableColumn fx:id="id" prefWidth="50" text="id" />
+              <TableColumn fx:id="modulo" prefWidth="100" text="Modulo" />
+              <TableColumn fx:id="nota" prefWidth="60" text="Nota" />
+              <TableColumn fx:id="alumno" prefWidth="120" text="Alumno" />
+          </columns>
+      </TableView>
+      <ComboBox fx:id="cbFiltro" layoutX="31.0" layoutY="262.0" prefHeight="26.0" prefWidth="210.0" promptText="Filtro por modulo" />
+   </children>
+</AnchorPane>
