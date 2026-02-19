@@ -1,10 +1,15 @@
-package com.javafx_alumno;
+package com.javafx_actividad_entregable;
 
-import com.javafx_alumno.model.Alumno;
-import com.javafx_alumno.model.AsignaturaAlumno;
-import javafx.collections.FXCollections;
+import com.javafx_actividad_entregable.model.Alumno;
+import com.javafx_actividad_entregable.model.AsignaturaAlumno;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -39,8 +44,23 @@ public class AlumnoController {
         Stage stage = (Stage) btnSalir.getScene().getWindow();
         stage.close();
     }
-    @FXML private Button btnAtras;
+    @FXML
+    private Button btnAtras;
+    @FXML
+    private void onAtras() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx_actividad_entregable/login.fxml"));
+            Parent root = loader.load();
 
+            Stage stage = (Stage) btnAtras.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public void initialize(){
 

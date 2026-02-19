@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx_actividad_entregable.AlumnoController">
+    <children>
+      <Text fx:id="txtTitulo" layoutX="207.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consulta de expediente">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfExpediente" layoutX="39.0" layoutY="54.0" />
+      <TextField fx:id="tfNombre" layoutX="225.0" layoutY="54.0" />
+      <TextField fx:id="tfApellido" layoutX="409.0" layoutY="54.0" />
+
+      <TableView fx:id="tbNotas" layoutX="39.0" layoutY="100.0" prefHeight="240.0" prefWidth="519.0">
+          <columns>
+              <TableColumn fx:id="id" prefWidth="100.0" text="ID" />
+              <TableColumn fx:id="modulo" prefWidth="200.0" text="Modulo" />
+              <TableColumn fx:id="nota" prefWidth="100.0" text="Nota" />
+          </columns>
+      </TableView>
+      <Button fx:id="btnSalir" layoutX="39.0" layoutY="354.0" mnemonicParsing="false" onAction="#onSalir" text="Salir" />
+        <Button fx:id="btnAtras" layoutX="92.0" layoutY="354.0" mnemonicParsing="false" onAction="#onAtras" text="Atrás" />
+   </children>
+</AnchorPane>
