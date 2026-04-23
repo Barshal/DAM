@@ -1,0 +1,27 @@
+### Obtener corredores
+GET http://localhost:8080/api/corredores
+
+### Crear corredor
+POST http://localhost:8080/api/corredores
+Content-Type: application/json
+
+{
+  "nombre": "Pablo López",
+  "dni": "12344568A",
+  "edad": 23,
+  "club": "Trail Murcia"
+}
+
+### Actualizar corredor
+PUT http://localhost:8080/api/corredores/1
+Content-Type: application/json
+
+{
+  "nombre": "Héctor Actualizado",
+  "dni": "12345678A",
+  "edad": 19,
+  "club": "Trail Madrid"
+}
+
+### Borrar corredor
+DELETE http://localhost:8080/api/corredores/9

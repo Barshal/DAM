@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Liga Trail Running</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        h1 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background: #f4f4f4; }
+        button { padding: 8px 12px; margin-top: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<h1>Corredores</h1>
+<button onclick="cargarCorredores()">Cargar corredores</button>
+<table id="tablaCorredores">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>DNI</th>
+        <th>Edad</th>
+        <th>Club</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<h1>Carreras</h1>
+<button onclick="cargarCarreras()">Cargar carreras</button>
+<table id="tablaCarreras">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Ubicación</th>
+        <th>Distancia</th>
+        <th>Fecha</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<h1>Inscripciones</h1>
+<button onclick="cargarInscripciones()">Cargar inscripciones</button>
+<table id="tablaInscripciones">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Dorsal</th>
+        <th>Tiempo</th>
+        <th>Corredor</th>
+        <th>Carrera</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    const API = "http://localhost:8080/api";
+
+    function cargarCorredores() {
+        fetch(`${API}/corredores`)
+            .then(r => r.json())
+            .then(data => {
+                const tbody = document.querySelector("#tablaCorredores tbody");
+                tbody.innerHTML = "";
+                data.forEach(c => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${c.id}</td>
+                            <td>${c.nombre}</td>
+                            <td>${c.dni}</td>
+                            <td>${c.edad}</td>
+                            <td>${c.club}</td>
+                        </tr>`;
+                });
+            });
+    }
+
+    function cargarCarreras() {
+        fetch(`${API}/carreras`)
+            .then(r => r.json())
+            .then(data => {
+                const tbody = document.querySelector("#tablaCarreras tbody");
+                tbody.innerHTML = "";
+                data.forEach(c => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${c.id}</td>
+                            <td>${c.nombre}</td>
+                            <td>${c.ubicacion}</td>
+                            <td>${c.distanciaKm} km</td>
+                            <td>${c.fecha}</td>
+                        </tr>`;
+                });
+            });
+    }
+
+    function cargarInscripciones() {
+        fetch(`${API}/inscripciones`)
+            .then(r => r.json())
+            .then(data => {
+                const tbody = document.querySelector("#tablaInscripciones tbody");
+                tbody.innerHTML = "";
+                data.forEach(i => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${i.id}</td>
+                            <td>${i.dorsal}</td>
+                            <td>${i.tiempoOficial ?? "-"}</td>
+                            <td>${i.corredor?.nombre}</td>
+                            <td>${i.carrera?.nombre}</td>
+                        </tr>`;
+                });
+            });
+    }
+</script>
+
+</body>
+</html>
